@@ -1,4 +1,4 @@
-# geometric_lib
+# geometric\_lib
 
 Данная библиотека представляет собой набор функций для вычисления площадей и периметров различных геометрических фигур. Каждая фигура представлена в виде отдельного модуля, содержащего функции расчёта.
 
@@ -118,8 +118,10 @@ print(perimeter_result)  # Вернет 12
 
 ## История изменений
 
-- **Circle and square added**
-- **Docs added**
-- **Added rectangle.py**
-- **Added triangle.py**
-- **Fixed perimeter calculation in rectangle.py**
+|   Hash  |                Commit message               |     Date     |
+|:-------:|:--------------------------------------------|-------------:|
+| 8ba9aeb | Circle and square added                     |  Mar 4, 2021 |
+| d078c8d | Docs added                                  |  Mar 4, 2021 |
+| de708de | Added rectangle.py                          | Sep 11, 2023 |
+| d8b2d68 | Added triangle.py                           | Sep 11, 2023 |
+| f2f7a63 | Fixed perimeter calculation in rectangle.py | Sep 11, 2023 |
