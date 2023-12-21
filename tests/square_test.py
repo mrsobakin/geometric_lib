@@ -12,6 +12,10 @@ class TestSquareFunctions(unittest.TestCase):
         area = square.area(3)
         self.assertEqual(area, 9)
 
+    def test_area3(self):
+        area = square.area(7)
+        self.assertEqual(area, 49)
+
     def test_zero_area(self):
         area = square.area(0)
         self.assertEqual(area, 0)
