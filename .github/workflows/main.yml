@@ -2,27 +2,22 @@ name: Run tests
 
 on:
   push:
+    paths:
+      - '**.py'
 
 jobs:
-  test_linux:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-latest", "windows-latest"]
+        python: ["3.8", "3.9", "3.10", "3.11"]
     steps:
     - uses: actions/checkout@v4
-    - name: Setup Python 3.11
+    - name: Setup Python ${{ matrix.python }}
       uses: actions/setup-python@v4
       with:
-        python-version: "3.11"
+        python-version: ${{ matrix.python }}
         architecture: "x64"
-    - name: Run tests
-      run: python -m unittest tests/*.py
-  test_windows:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
-        architecture: "x64"
-    - name: Run tests
+    - name: Run Tests on `${{ matrix.os }}`, using Python `${{ matrix.python }}`
       run: python -m unittest discover -p "*_test.py" tests
